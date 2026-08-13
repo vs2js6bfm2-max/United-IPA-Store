@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="United IPA商店 · 精品 iOS 应用分享" />
+  <title>United IPA商店 · iOS 应用下载</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">United IPA商店</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#featured" class="nav-link">推荐</a>
+        <a href="#list" class="nav-link">全部</a>
+        <a href="#" class="nav-link">分类</a>
+        <a href="#" class="nav-link">关于</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="切换主题">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="featured">
+    <div class="hero-inner reveal">
+      <p class="hero-eyebrow">United IPA商店 · 精选推荐</p>
+      <h1 class="hero-title">
+        <span>精选 · 克制</span>
+        <span class="hero-title-sub">发现最优雅的 iOS 应用</span>
+      </h1>
+      <p class="hero-desc">这里只收录有品质的 IPA 应用，纯净、无广告、无追踪。</p>
+      <div class="hero-grid">
+        <article class="feature-card">
+          <div class="feature-badge">本周热推</div>
+          <h3 class="feature-name">Lumen · 光度</h3>
+          <p class="feature-meta">工具 · 2026.08.10</p>
+          <p class="feature-desc">一款用光线作画的摄影应用，极简界面下藏着专业级的色彩调校。</p>
+          <div class="feature-foot">
+            <span class="feature-count">↓ 12,384</span>
+            <a href="#" class="btn-primary">立即下载</a>
+          </div>
+        </article>
+        <article class="feature-card feature-card--alt">
+          <div class="feature-badge">编辑推荐</div>
+          <h3 class="feature-name">Nimbus · 云端</h3>
+          <p class="feature-meta">效率 · 2026.08.05</p>
+          <p class="feature-desc">纯净无广告的云笔记，支持 Markdown，端到端加密。</p>
+          <div class="feature-foot">
+            <span class="feature-count">↓ 8,902</span>
+            <a href="#" class="btn-ghost">查看详情 →</a>
+          </div>
+        </article>
+        <article class="feature-card feature-card--mini">
+          <div class="feature-badge">新作上架</div>
+          <h3 class="feature-name">Sonic · 声波</h3>
+          <p class="feature-meta">音乐 · 2026.08.12</p>
+          <p class="feature-desc">无损音质播放器，专为音乐发烧友设计。</p>
+          <div class="feature-foot">
+            <span class="feature-count">↓ 3,210</span>
+            <a href="#" class="btn-ghost">查看详情 →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="list">
+    <div class="layout">
+      <section class="content">
+        <div class="section-head reveal">
+          <h2 class="section-title">全部应用</h2>
+          <p class="section-sub">共 <strong id="totalCount">0</strong> 款应用</p>
+        </div>
+        <div class="filter-tabs reveal">
+          <button class="tab active" data-filter="all">全部</button>
+          <button class="tab" data-filter="工具">工具</button>
+          <button class="tab" data-filter="效率">效率</button>
+          <button class="tab" data-filter="摄影">摄影</button>
+          <button class="tab" data-filter="音乐">音乐</button>
+          <button class="tab" data-filter="游戏">游戏</button>
+        </div>
+        <div class="card-grid" id="cardGrid"></div>
+        <div class="load-more reveal">
+          <button class="btn-outline" id="loadMore">加载更多</button>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="side-block reveal">
+          <h4 class="side-title">搜索</h4>
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input type="text" id="searchInput" placeholder="搜索应用名称或分类…" />
+          </div>
+        </div>
+        <div class="side-block reveal">
+          <h4 class="side-title">分类标签</h4>
+          <div class="tag-list">
+            <span class="tag" data-tag="工具">工具</span>
+            <span class="tag" data-tag="效率">效率</span>
+            <span class="tag" data-tag="摄影">摄影</span>
+            <span class="tag" data-tag="音乐">音乐</span>
+            <span class="tag" data-tag="游戏">游戏</span>
+            <span class="tag" data-tag="社交">社交</span>
+            <span class="tag" data-tag="阅读">阅读</span>
+            <span class="tag" data-tag="开发">开发</span>
+            <span class="tag" data-tag="生活">生活</span>
+          </div>
+        </div>
+        <div class="side-block reveal">
+          <h4 class="side-title">最新上架</h4>
+          <ul class="side-list">
+            <li><span>Atlas · 图集</span><em>08.12</em></li>
+            <li><span>Prism · 棱镜</span><em>08.10</em></li>
+            <li><span>Echo · 回声</span><em>08.08</em></li>
+            <li><span>Loop · 循环</span><em>08.05</em></li>
+          </ul>
+        </div>
+        <div class="side-block side-sticky reveal">
+          <div class="notice">
+            <h4>温馨提示</h4>
+            <p>本站仅提供 IPA 资源索引，请在合法渠道获取应用。</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="foot-brand">
+        <span class="logo-mark">✦</span>
+        <span>United IPA商店</span>
+      </div>
+      <nav class="foot-nav">
+        <a href="#">关于</a>
+        <a href="#">条款</a>
+        <a href="#">隐私</a>
+        <a href="#">联系</a>
+      </nav>
+      <p class="foot-copy">© 2026 United IPA商店 · 用心收纳每一款好应用</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
